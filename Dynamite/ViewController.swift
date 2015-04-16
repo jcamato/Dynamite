@@ -25,20 +25,10 @@ class ViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
     
-//    override func viewDidAppear(animated: Bool) {
-//        super.viewDidAppear(animated)
-//        
-//                let heightOfView = self.view.frame.height
-//                let distanceFromTop = CGFloat(heightOfView * 0.575)
-//        
-//                let frame = displayTimeLabel.frame
-//                displayTimeLabel.frame = CGRect(x: frame.minX, y: distanceFromTop, width: frame.width, height: frame.height)
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        //populate imgListArray with png images
         for countValue in 0...58
         {
             if countValue < 10 {
@@ -52,12 +42,13 @@ class ViewController: UIViewController {
             }
         }
         
+        //create animation from imgListArray
         explosionSequence.animationImages = imgListArray as [AnyObject];
         explosionSequence.animationRepeatCount = 1
         
-        //show saved high score as displayHighScore string
-        var scoreNew = NSUserDefaults.standardUserDefaults().integerForKey("highscore")
-        var scoreString = toString(scoreNew)
+        //convert highscore to string and display as high score
+        var scoreInt = NSUserDefaults.standardUserDefaults().integerForKey("highscore")
+        var scoreString = toString(scoreInt)
         var newString = ""
         var newString2 = ""
         var length = count(scoreString)
@@ -73,17 +64,14 @@ class ViewController: UIViewController {
                     newString2 += ":"
                 }
             }
-            
             var index = advance(newString.startIndex, i-1)
             newString2 += toString(newString[index])
         }
         
         displayHighScore.text = newString2
         
-        //stop timer when closing app helpers
+        //stop timer when closing app
         let notificationCenter = NSNotificationCenter.defaultCenter()
-        
-        //UIApplicationDidEnterBackgroundNotification & UIApplicationWillEnterForegroundNotification shouldn't be quoted
         notificationCenter.addObserver(self, selector: "didEnterBackground", name: UIApplicationDidEnterBackgroundNotification, object: nil)
     }
     
@@ -95,8 +83,8 @@ class ViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
             //don't do anything
         }
-        
         let yesAction = UIAlertAction(title: "Yes", style: .Default) { action -> Void in
+            //reset high score to 0 and update labels
             NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "highscore")
             NSUserDefaults.standardUserDefaults().synchronize()
             self.displayHighScore.text = "00:00:00:00"
@@ -107,10 +95,10 @@ class ViewController: UIViewController {
         alertController.addAction(yesAction)
         
         self.presentViewController(alertController, animated: true, completion: nil)
-        
     }
     
     @IBAction func startHold(sender: AnyObject) {
+        //update timer while user holds down screen
         if (!timer.valid) {
             let aSelector : Selector = "updateTime"
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
@@ -119,21 +107,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func endHold(sender: AnyObject) {
+        
         timer.invalidate()
         
-        //get time score
-        var text1 = displayTimeLabel.text
+        //convert timeLabel string to integer and set as score
+        var string1 = displayTimeLabel.text
+        var string2 = string1?.stringByReplacingOccurrencesOfString(":", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        var score = string2?.toInt()
         
-        //remove ":"
-        var text2 = text1?.stringByReplacingOccurrencesOfString(":", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        
-        //convert to integer
-        var score = text2?.toInt()
-        
-        //Check if score is higher than NSUserDefaults stored value and change NSUserDefaults stored value if it's true
+        //Check if score is higher than NSUserDefaults stored value
         if score > NSUserDefaults.standardUserDefaults().integerForKey("highscore") {
+            //change NSUserDefaults stored value to new score
             NSUserDefaults.standardUserDefaults().setInteger(score!, forKey: "highscore")
             NSUserDefaults.standardUserDefaults().synchronize()
+            //update label
             displayHighScore.text = displayTimeLabel.text
             
             // Set the sound file name & extension
@@ -151,7 +138,6 @@ class ViewController: UIViewController {
             
             //explosion
             explosionSequence.startAnimating()
-            
         }
     }
     
@@ -185,7 +171,6 @@ class ViewController: UIViewController {
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         displayTimeLabel.text = "\(strHours):\(strMinutes):\(strSeconds):\(strFraction)"
-        
     }
     
     //stop timer if user leaves app
