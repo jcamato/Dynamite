@@ -17,6 +17,7 @@
 		AB3C540E1ADCCEFF005BF138 /* DS-DIGIB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = AB3C540A1ADCCEFF005BF138 /* DS-DIGIB.TTF */; };
 		AB3C540F1ADCCEFF005BF138 /* DS-DIGII.TTF in Resources */ = {isa = PBXBuildFile; fileRef = AB3C540B1ADCCEFF005BF138 /* DS-DIGII.TTF */; };
 		AB3C54101ADCCEFF005BF138 /* DS-DIGIT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = AB3C540C1ADCCEFF005BF138 /* DS-DIGIT.TTF */; };
+		AB8AD0221ADFB9CA00062B12 /* Explosion_Dull.wav in Resources */ = {isa = PBXBuildFile; fileRef = AB8AD0211ADFB9CA00062B12 /* Explosion_Dull.wav */; };
 		ABACA5A81ADF018E0018D585 /* 00.png in Resources */ = {isa = PBXBuildFile; fileRef = ABACA5A71ADF018E0018D585 /* 00.png */; };
 		ABBC8C4C1ADE673D00B40612 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = ABBC8C111ADE673D00B40612 /* 01.png */; };
 		ABBC8C4D1ADE673D00B40612 /* 02.png in Resources */ = {isa = PBXBuildFile; fileRef = ABBC8C121ADE673D00B40612 /* 02.png */; };
@@ -103,6 +104,7 @@
 		AB3C540A1ADCCEFF005BF138 /* DS-DIGIB.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGIB.TTF"; sourceTree = "<group>"; };
 		AB3C540B1ADCCEFF005BF138 /* DS-DIGII.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGII.TTF"; sourceTree = "<group>"; };
 		AB3C540C1ADCCEFF005BF138 /* DS-DIGIT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGIT.TTF"; sourceTree = "<group>"; };
+		AB8AD0211ADFB9CA00062B12 /* Explosion_Dull.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Explosion_Dull.wav; path = ../Explosion_Dull.wav; sourceTree = "<group>"; };
 		ABACA5A71ADF018E0018D585 /* 00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 00.png; sourceTree = "<group>"; };
 		ABBC8C111ADE673D00B40612 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
 		ABBC8C121ADE673D00B40612 /* 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02.png; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		AB3C53E71ADCCDF7005BF138 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AB8AD0211ADFB9CA00062B12 /* Explosion_Dull.wav */,
 				ABBC8C0F1ADE673D00B40612 /* Explosion Sequence New */,
 				AB3C54091ADCCEFF005BF138 /* DS-DIGI.TTF */,
 				AB3C540A1ADCCEFF005BF138 /* DS-DIGIB.TTF */,
@@ -450,6 +453,7 @@
 				AB3C53F11ADCCDF7005BF138 /* Images.xcassets in Resources */,
 				ABBC8C751ADE673D00B40612 /* 42.png in Resources */,
 				ABBC8C801ADE673D00B40612 /* 53.png in Resources */,
+				AB8AD0221ADFB9CA00062B12 /* Explosion_Dull.wav in Resources */,
 				AB3C54101ADCCEFF005BF138 /* DS-DIGIT.TTF in Resources */,
 				ABBC8C581ADE673D00B40612 /* 13.png in Resources */,
 				ABBC8C7E1ADE673D00B40612 /* 51.png in Resources */,

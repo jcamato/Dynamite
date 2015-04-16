@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -21,6 +22,8 @@ class ViewController: UIViewController {
     var timer:NSTimer = NSTimer()
     
     var imgListArray :NSMutableArray = []
+    
+    var audioPlayer = AVAudioPlayer()
     
 //    override func viewDidAppear(animated: Bool) {
 //        super.viewDidAppear(animated)
@@ -48,6 +51,7 @@ class ViewController: UIViewController {
                 imgListArray .addObject(image!)
             }
         }
+        
         explosionSequence.animationImages = imgListArray as [AnyObject];
         explosionSequence.animationRepeatCount = 1
         
@@ -117,9 +121,6 @@ class ViewController: UIViewController {
     @IBAction func endHold(sender: AnyObject) {
         timer.invalidate()
         
-        //animation every end click
-        //explosionSequence.startAnimating()
-        
         //get time score
         var text1 = displayTimeLabel.text
         
@@ -129,19 +130,29 @@ class ViewController: UIViewController {
         //convert to integer
         var score = text2?.toInt()
         
-        NSUserDefaults.standardUserDefaults().integerForKey("highscore")
-        
         //Check if score is higher than NSUserDefaults stored value and change NSUserDefaults stored value if it's true
         if score > NSUserDefaults.standardUserDefaults().integerForKey("highscore") {
             NSUserDefaults.standardUserDefaults().setInteger(score!, forKey: "highscore")
             NSUserDefaults.standardUserDefaults().synchronize()
             displayHighScore.text = displayTimeLabel.text
-            //animation only if highscore
+            
+            // Set the sound file name & extension
+            var alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Explosion_Dull", ofType: "wav")!)
+            
+            // Preperation
+            AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
+            AVAudioSession.sharedInstance().setActive(true, error: nil)
+            
+            // Play the sound
+            var error: NSError?
+            audioPlayer = AVAudioPlayer(contentsOfURL: alertSound, error: &error)
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+            
+            //explosion
             explosionSequence.startAnimating()
             
         }
-        
-        NSUserDefaults.standardUserDefaults().integerForKey("highscore")
     }
     
     func updateTime() {
