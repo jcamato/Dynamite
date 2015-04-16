@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="DS-DIGI.TTF">
+            <string>DS-Digital</string>
+            <string>DS-Digital</string>
+            <string>DS-Digital</string>
+        </mutableArray>
+        <mutableArray key="DS-DIGIB.TTF">
+            <string>DS-Digital-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Dynamite" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="gFd-8O-hBK">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dynamite final 2" translatesAutoresizingMaskIntoConstraints="NO" id="Jyy-P8-vBB">
+                                <rect key="frame" x="-302" y="20" width="1204" height="580"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFU-a2-z1t">
+                                <rect key="frame" x="208" y="385" width="184" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="184" id="ARq-t3-sW8"/>
+                                    <constraint firstAttribute="height" constant="37" id="Cs2-ey-46l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DS-Digital" family="DS-Digital" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LwJ-1Y-Mjf">
+                                <rect key="frame" x="16" y="25" width="102" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="phH-A7-cVI"/>
+                                    <constraint firstAttribute="height" constant="20" id="ztO-Ug-dnD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DS-Digital-Bold" family="DS-Digital" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPd-im-b3J">
+                                <rect key="frame" x="16" y="45" width="102" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="oeL-TR-PaQ"/>
+                                    <constraint firstAttribute="width" constant="102" id="zng-ta-nvA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DS-Digital" family="DS-Digital" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="va6-uZ-y08">
+                                <rect key="frame" x="16" y="0.0" width="568" height="600"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="endHold:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lOM-h6-AuI"/>
+                                    <action selector="startHold:" destination="BYZ-38-t0r" eventType="touchDown" id="nhw-qa-4YN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIW-21-zx5">
+                                <rect key="frame" x="16" y="65" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="W5w-u0-0kG"/>
+                                    <constraint firstAttribute="width" constant="60" id="z9K-Hd-yhN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DS-Digital" family="DS-Digital" pointSize="22"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetHighScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C9B-rj-dfr"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="00.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Wx-ef-1cs">
+                                <rect key="frame" x="16" y="0.0" width="568" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="2Wx-ef-1cs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="89b-Js-cRX"/>
+                            <constraint firstItem="CPd-im-b3J" firstAttribute="top" secondItem="LwJ-1Y-Mjf" secondAttribute="bottom" id="9eB-wr-1gx"/>
+                            <constraint firstItem="Jyy-P8-vBB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Bbt-1m-Phn"/>
+                            <constraint firstItem="fIW-21-zx5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Em0-P9-3AP"/>
+                            <constraint firstItem="va6-uZ-y08" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Jzw-Mv-l4V"/>
+                            <constraint firstItem="zFU-a2-z1t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="365" id="SKa-Fk-5Xi"/>
+                            <constraint firstAttribute="centerX" secondItem="zFU-a2-z1t" secondAttribute="centerX" id="T2N-pD-ReW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Wx-ef-1cs" secondAttribute="bottom" id="XgW-1i-17S"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Jyy-P8-vBB" secondAttribute="bottom" id="ZfP-vf-lvh"/>
+                            <constraint firstAttribute="centerX" secondItem="Jyy-P8-vBB" secondAttribute="centerX" id="ZrF-4b-FSv"/>
+                            <constraint firstItem="LwJ-1Y-Mjf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="b9h-c4-uwt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="va6-uZ-y08" secondAttribute="trailing" id="dra-qS-Ua0"/>
+                            <constraint firstItem="LwJ-1Y-Mjf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fpE-EH-3Jy"/>
+                            <constraint firstItem="2Wx-ef-1cs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="gD4-h1-YuJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Wx-ef-1cs" secondAttribute="trailing" id="pEC-hY-jCd"/>
+                            <constraint firstItem="fIW-21-zx5" firstAttribute="top" secondItem="CPd-im-b3J" secondAttribute="bottom" id="vY6-wb-14I"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="va6-uZ-y08" secondAttribute="bottom" id="vhQ-B8-yWX"/>
+                            <constraint firstItem="va6-uZ-y08" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="wOr-cJ-q08"/>
+                            <constraint firstItem="CPd-im-b3J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="z1m-Ne-gWS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="displayHighScore" destination="CPd-im-b3J" id="0NV-Ue-fbC"/>
+                        <outlet property="displayTimeLabel" destination="zFU-a2-z1t" id="JFb-6c-zgY"/>
+                        <outlet property="explosionSequence" destination="2Wx-ef-1cs" id="VkA-qv-Ot7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="00.png" width="850" height="720"/>
+        <image name="Dynamite final 2" width="1204" height="903"/>
+        <image name="bg" width="320" height="480"/>
+    </resources>
+</document>
