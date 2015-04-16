@@ -22,6 +22,16 @@ class ViewController: UIViewController {
     
     var imgListArray :NSMutableArray = []
     
+//    override func viewDidAppear(animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//                let heightOfView = self.view.frame.height
+//                let distanceFromTop = CGFloat(heightOfView * 0.575)
+//        
+//                let frame = displayTimeLabel.frame
+//                displayTimeLabel.frame = CGRect(x: frame.minX, y: distanceFromTop, width: frame.width, height: frame.height)
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
