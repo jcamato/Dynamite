@@ -24,6 +24,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>digital-7.mono.tff</string>
 		<string>DS-DIGI.TFF</string>
 		<string>DS-DIGIB.TFF</string>
 		<string>DS-DIGII.TFF</string>

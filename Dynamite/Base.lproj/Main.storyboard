@@ -3,15 +3,18 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="DS-DIGI.TTF">
             <string>DS-Digital</string>
-            <string>DS-Digital</string>
-            <string>DS-Digital</string>
         </mutableArray>
         <mutableArray key="DS-DIGIB.TTF">
             <string>DS-Digital-Bold</string>
+        </mutableArray>
+        <mutableArray key="digital-7.mono.ttf">
+            <string>Digital-7Mono</string>
+            <string>Digital-7Mono</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -33,13 +36,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dynamite final 2" translatesAutoresizingMaskIntoConstraints="NO" id="Jyy-P8-vBB">
                                 <rect key="frame" x="-302" y="20" width="1204" height="580"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFU-a2-z1t">
-                                <rect key="frame" x="208" y="385" width="184" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="184" id="ARq-t3-sW8"/>
-                                    <constraint firstAttribute="height" constant="37" id="Cs2-ey-46l"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="DS-Digital" family="DS-Digital" pointSize="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zFU-a2-z1t">
+                                <rect key="frame" x="84" y="129" width="432" height="471"/>
+                                <fontDescription key="fontDescription" name="Digital-7Mono" family="Digital-7" pointSize="36"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -54,12 +53,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPd-im-b3J">
-                                <rect key="frame" x="16" y="45" width="102" height="20"/>
+                                <rect key="frame" x="16" y="45" width="110" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="oeL-TR-PaQ"/>
-                                    <constraint firstAttribute="width" constant="102" id="zng-ta-nvA"/>
+                                    <constraint firstAttribute="width" constant="110" id="zng-ta-nvA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="DS-Digital" family="DS-Digital" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Digital-7Mono" family="Digital-7" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -97,8 +96,11 @@
                             <constraint firstItem="CPd-im-b3J" firstAttribute="top" secondItem="LwJ-1Y-Mjf" secondAttribute="bottom" id="9eB-wr-1gx"/>
                             <constraint firstItem="Jyy-P8-vBB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Bbt-1m-Phn"/>
                             <constraint firstItem="fIW-21-zx5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Em0-P9-3AP"/>
+                            <constraint firstItem="zFU-a2-z1t" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.785" id="Hpo-4k-fnW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zFU-a2-z1t" secondAttribute="bottom" id="IAP-JA-Akb"/>
+                            <constraint firstItem="zFU-a2-z1t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68" id="JLo-Hb-2Th"/>
                             <constraint firstItem="va6-uZ-y08" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Jzw-Mv-l4V"/>
-                            <constraint firstItem="zFU-a2-z1t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="365" id="SKa-Fk-5Xi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zFU-a2-z1t" secondAttribute="trailing" constant="68" id="MQ2-xR-1by"/>
                             <constraint firstAttribute="centerX" secondItem="zFU-a2-z1t" secondAttribute="centerX" id="T2N-pD-ReW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Wx-ef-1cs" secondAttribute="bottom" id="XgW-1i-17S"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Jyy-P8-vBB" secondAttribute="bottom" id="ZfP-vf-lvh"/>
