@@ -137,7 +137,7 @@ class ViewController: UIViewController {
             displayHighScore.text = displayTimeLabel.text
             
             // Set the sound file name & extension
-            var alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Explosion_Dull", ofType: "wav")!)
+            var alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Grenade_Explosion", ofType: "wav")!)
             
             // Preperation
             AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)

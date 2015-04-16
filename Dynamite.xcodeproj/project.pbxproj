@@ -17,7 +17,6 @@
 		AB3C540E1ADCCEFF005BF138 /* DS-DIGIB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = AB3C540A1ADCCEFF005BF138 /* DS-DIGIB.TTF */; };
 		AB3C540F1ADCCEFF005BF138 /* DS-DIGII.TTF in Resources */ = {isa = PBXBuildFile; fileRef = AB3C540B1ADCCEFF005BF138 /* DS-DIGII.TTF */; };
 		AB3C54101ADCCEFF005BF138 /* DS-DIGIT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = AB3C540C1ADCCEFF005BF138 /* DS-DIGIT.TTF */; };
-		AB8AD0221ADFB9CA00062B12 /* Explosion_Dull.wav in Resources */ = {isa = PBXBuildFile; fileRef = AB8AD0211ADFB9CA00062B12 /* Explosion_Dull.wav */; };
 		ABACA5A81ADF018E0018D585 /* 00.png in Resources */ = {isa = PBXBuildFile; fileRef = ABACA5A71ADF018E0018D585 /* 00.png */; };
 		ABBC8C4C1ADE673D00B40612 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = ABBC8C111ADE673D00B40612 /* 01.png */; };
 		ABBC8C4D1ADE673D00B40612 /* 02.png in Resources */ = {isa = PBXBuildFile; fileRef = ABBC8C121ADE673D00B40612 /* 02.png */; };
@@ -78,6 +77,7 @@
 		ABBC8C841ADE673D00B40612 /* 57.png in Resources */ = {isa = PBXBuildFile; fileRef = ABBC8C491ADE673D00B40612 /* 57.png */; };
 		ABBC8C851ADE673D00B40612 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = ABBC8C4A1ADE673D00B40612 /* 58.png */; };
 		ABE735131AE0775100CB7EEC /* digital-7.mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABE735121AE0775100CB7EEC /* digital-7.mono.ttf */; };
+		ABE735151AE07BB500CB7EEC /* Grenade_Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = ABE735141AE07BB500CB7EEC /* Grenade_Explosion.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +105,6 @@
 		AB3C540A1ADCCEFF005BF138 /* DS-DIGIB.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGIB.TTF"; sourceTree = "<group>"; };
 		AB3C540B1ADCCEFF005BF138 /* DS-DIGII.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGII.TTF"; sourceTree = "<group>"; };
 		AB3C540C1ADCCEFF005BF138 /* DS-DIGIT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGIT.TTF"; sourceTree = "<group>"; };
-		AB8AD0211ADFB9CA00062B12 /* Explosion_Dull.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Explosion_Dull.wav; path = ../Explosion_Dull.wav; sourceTree = "<group>"; };
 		ABACA5A71ADF018E0018D585 /* 00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 00.png; sourceTree = "<group>"; };
 		ABBC8C111ADE673D00B40612 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
 		ABBC8C121ADE673D00B40612 /* 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02.png; sourceTree = "<group>"; };
@@ -166,6 +165,7 @@
 		ABBC8C491ADE673D00B40612 /* 57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 57.png; sourceTree = "<group>"; };
 		ABBC8C4A1ADE673D00B40612 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
 		ABE735121AE0775100CB7EEC /* digital-7.mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.mono.ttf"; sourceTree = "<group>"; };
+		ABE735141AE07BB500CB7EEC /* Grenade_Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Grenade_Explosion.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +220,7 @@
 		AB3C53E71ADCCDF7005BF138 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AB8AD0211ADFB9CA00062B12 /* Explosion_Dull.wav */,
+				ABE735141AE07BB500CB7EEC /* Grenade_Explosion.wav */,
 				ABBC8C0F1ADE673D00B40612 /* Explosion Sequence New */,
 				AB3C54091ADCCEFF005BF138 /* DS-DIGI.TTF */,
 				AB3C540A1ADCCEFF005BF138 /* DS-DIGIB.TTF */,
@@ -422,6 +422,7 @@
 				ABBC8C4C1ADE673D00B40612 /* 01.png in Resources */,
 				ABBC8C701ADE673D00B40612 /* 37.png in Resources */,
 				ABBC8C651ADE673D00B40612 /* 26.png in Resources */,
+				ABE735151AE07BB500CB7EEC /* Grenade_Explosion.wav in Resources */,
 				ABBC8C5A1ADE673D00B40612 /* 15.png in Resources */,
 				ABBC8C7D1ADE673D00B40612 /* 50.png in Resources */,
 				AB3C540E1ADCCEFF005BF138 /* DS-DIGIB.TTF in Resources */,
@@ -457,7 +458,6 @@
 				AB3C53F11ADCCDF7005BF138 /* Images.xcassets in Resources */,
 				ABBC8C751ADE673D00B40612 /* 42.png in Resources */,
 				ABBC8C801ADE673D00B40612 /* 53.png in Resources */,
-				AB8AD0221ADFB9CA00062B12 /* Explosion_Dull.wav in Resources */,
 				AB3C54101ADCCEFF005BF138 /* DS-DIGIT.TTF in Resources */,
 				ABBC8C581ADE673D00B40612 /* 13.png in Resources */,
 				ABBC8C7E1ADE673D00B40612 /* 51.png in Resources */,
