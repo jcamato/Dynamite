@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     var timer:NSTimer = NSTimer()
     
-    var imgListArray :NSMutableArray = []
+    var imgListArray: [UIImage] = []
     
     var audioPlayer = AVAudioPlayer()
     
@@ -33,17 +33,17 @@ class ViewController: UIViewController {
         {
             if countValue < 10 {
                 var strImageName : String = "0\(countValue).png"
-                var image  = UIImage(named:strImageName)
-                imgListArray .addObject(image!)
+                var image  = UIImage(named: strImageName)!
+                imgListArray.append(image)
             } else {
                 var strImageName : String = "\(countValue).png"
-                var image  = UIImage(named:strImageName)
-                imgListArray .addObject(image!)
+                var image  = UIImage(named: strImageName)!
+                imgListArray.append(image)
             }
         }
         
         //create animation from imgListArray
-        explosionSequence.animationImages = imgListArray as [AnyObject];
+        explosionSequence.animationImages = imgListArray //as [AnyObject];
         explosionSequence.animationRepeatCount = 1
         
         //convert highscore to string and display as high score
