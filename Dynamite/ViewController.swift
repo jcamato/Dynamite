@@ -29,22 +29,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //populate imgListArray with png images
-        for countValue in 0...58
-        {
+        for countValue in 0...58 {
+            var strImageName : String
             if countValue < 10 {
-                var strImageName : String = "0\(countValue).png"
-                var image  = UIImage(named: strImageName)!
-                imgListArray.append(image)
+                strImageName = "0\(countValue).png"
             } else {
-                var strImageName : String = "\(countValue).png"
-                var image  = UIImage(named: strImageName)!
-                imgListArray.append(image)
+                strImageName = "\(countValue).png"
             }
+            
+            var image = UIImage(named: strImageName)!
+            imgListArray.append(image)
         }
         
         //create animation from imgListArray
-        explosionSequence.animationImages = imgListArray //as [AnyObject];
+        explosionSequence.animationImages = imgListArray
         explosionSequence.animationRepeatCount = 1
+        explosionSequence.alpha = 0.0
+        explosionSequence.startAnimating()
         
         //convert highscore to string and display as high score
         var scoreInt = NSUserDefaults.standardUserDefaults().integerForKey("highscore")
@@ -74,7 +75,6 @@ class ViewController: UIViewController {
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "didEnterBackground", name: UIApplicationDidEnterBackgroundNotification, object: nil)
     }
-    
     
     @IBAction func resetHighScore(sender: AnyObject) {
         
@@ -137,6 +137,7 @@ class ViewController: UIViewController {
             audioPlayer.play()
             
             //explosion
+            explosionSequence.alpha = 1.0
             explosionSequence.startAnimating()
         }
     }
@@ -177,11 +178,5 @@ class ViewController: UIViewController {
     func didEnterBackground() {
         timer.invalidate()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 
