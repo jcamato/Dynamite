@@ -1,3 +1,3 @@
 # Dynamite
 
-My first iOS Swift application :)
+Simple iOS Game
