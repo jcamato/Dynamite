@@ -1,3 +1,2 @@
 # Dynamite
-
 Simple iOS Game
