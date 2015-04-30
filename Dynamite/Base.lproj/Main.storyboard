@@ -87,12 +87,26 @@
                                     <action selector="resetHighScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C9B-rj-dfr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deE-gG-uGs">
+                                <rect key="frame" x="539" y="25" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="1w0-Ca-Nlz"/>
+                                    <constraint firstAttribute="height" constant="45" id="kXA-Qe-cb0"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="gamecenter-icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openGameCenter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5X5-0P-Jkm"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="00.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Wx-ef-1cs">
                                 <rect key="frame" x="16" y="0.0" width="568" height="600"/>
                             </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="2Wx-ef-1cs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="89b-Js-cRX"/>
+                            <constraint firstItem="deE-gG-uGs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="9OA-Fc-dz0"/>
                             <constraint firstItem="CPd-im-b3J" firstAttribute="top" secondItem="LwJ-1Y-Mjf" secondAttribute="bottom" id="9eB-wr-1gx"/>
                             <constraint firstItem="Jyy-P8-vBB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Bbt-1m-Phn"/>
                             <constraint firstItem="fIW-21-zx5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Em0-P9-3AP"/>
@@ -103,6 +117,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="zFU-a2-z1t" secondAttribute="trailing" constant="68" id="MQ2-xR-1by"/>
                             <constraint firstItem="va6-uZ-y08" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RH6-d6-7yy"/>
                             <constraint firstAttribute="centerX" secondItem="zFU-a2-z1t" secondAttribute="centerX" id="T2N-pD-ReW"/>
+                            <constraint firstItem="deE-gG-uGs" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VqY-uS-8Q0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Wx-ef-1cs" secondAttribute="bottom" id="XgW-1i-17S"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Jyy-P8-vBB" secondAttribute="bottom" id="ZfP-vf-lvh"/>
                             <constraint firstAttribute="centerX" secondItem="Jyy-P8-vBB" secondAttribute="centerX" id="ZrF-4b-FSv"/>
@@ -134,5 +149,6 @@
         <image name="00.png" width="850" height="720"/>
         <image name="Dynamite final 2" width="1204" height="903"/>
         <image name="bg" width="320" height="480"/>
+        <image name="gamecenter-icon" width="512" height="512"/>
     </resources>
 </document>

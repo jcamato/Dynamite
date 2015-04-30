@@ -8,8 +8,9 @@
 
 import UIKit
 import AVFoundation
+import GameKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GKGameCenterControllerDelegate {
 
     @IBOutlet weak var displayTimeLabel: UILabel!
     
@@ -25,8 +26,16 @@ class ViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
     
+    var Hours:Int = 0
+    var Minutes:Int = 0
+    var Seconds:Int = 0
+    var Fraction:Int = 0
+    var endTimeSeconds:Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        authenticateLocalPlayer()
         
         //populate imgListArray with png images
         for countValue in 0...58 {
@@ -79,7 +88,7 @@ class ViewController: UIViewController {
     @IBAction func resetHighScore(sender: AnyObject) {
         
         //alert controller
-        let alertController: UIAlertController = UIAlertController(title: "Reset High Score", message: "Are you sure you want to reset your high score?", preferredStyle: .Alert)
+        let alertController: UIAlertController = UIAlertController(title: "Reset High Score", message: "Are you sure you want to reset your local high score? Game Center leaderboards will be unchanged.", preferredStyle: .Alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
             //don't do anything
         }
@@ -109,6 +118,10 @@ class ViewController: UIViewController {
     @IBAction func endHold(sender: AnyObject) {
         
         timer.invalidate()
+        
+        endTimeSeconds = ((Hours * 3600)*100) + ((Minutes * 60)*100) + (Seconds*100) + Fraction
+        //Game Center High Score
+        saveHighscore(endTimeSeconds)
         
         //convert timeLabel string to integer and set as score
         var string1 = displayTimeLabel.text
@@ -172,6 +185,66 @@ class ViewController: UIViewController {
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         displayTimeLabel.text = "\(strHours):\(strMinutes):\(strSeconds):\(strFraction)"
+        
+        Hours = Int(hours)
+        Minutes = Int(minutes)
+        Seconds = Int(seconds)
+        Fraction = Int(fraction)
+    }
+    
+    @IBAction func openGameCenter(sender: AnyObject) {
+        showLeader()
+    }
+    
+    //send high score to leaderboard
+    func saveHighscore(score:Int) {
+        
+        //check if user is signed in
+        if GKLocalPlayer.localPlayer().authenticated {
+            
+            var scoreReporter = GKScore(leaderboardIdentifier: "dynamiteHoldLeaderboard_01")
+            
+            scoreReporter.value = Int64(score) //score variable here
+            
+            var scoreArray: [GKScore] = [scoreReporter]
+            
+            GKScore.reportScores(scoreArray, withCompletionHandler: {(error : NSError!) -> Void in
+                if error != nil {
+                    println("error")
+                }
+            })
+        }
+    }
+    
+    //shows leaderboard screen
+    func showLeader() {
+        var vc = self.view?.window?.rootViewController
+        var gc = GKGameCenterViewController()
+        gc.gameCenterDelegate = self
+        vc?.presentViewController(gc, animated: true, completion: nil)
+    }
+    
+    //hides leaderboard screen
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
+        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    //initiate gamecenter
+    func authenticateLocalPlayer(){
+        
+        var localPlayer = GKLocalPlayer.localPlayer()
+        
+        localPlayer.authenticateHandler = {(viewController, error) -> Void in
+            
+            if (viewController != nil) {
+                self.presentViewController(viewController, animated: true, completion: nil)
+            }
+                
+            else {
+                println((GKLocalPlayer.localPlayer().authenticated))
+            }
+        }
     }
     
     //stop timer if user leaves app
